@@ -67,10 +67,10 @@ const TopBar = () => {
           </div>
           <nav ref={mobileMenuRef} className={`${isMobileMenuOpen ? "" : "py-0 shadow-none"} transition-all duration-700 ease-catx-ease overflow-hidden`} style={{ maxHeight: isMobileMenuOpen ? mobileMenuRef.current?.scrollHeight + "px" : "0px" }}>
             <ul className="py-2 text-center font-bignoodletitling text-2xl text-catx-white bg-catx-black/90 shadow-md backdrop-blur-sm">
-              <TopBarItem title={"Teams"} link={"teams"} className="w-fit mx-auto py-1 transition-all duration-500 ease-catx-ease" slideToSectionCallback={slideToSection} />
-              <TopBarItem title={"Socials"} link={"socials"} className="w-fit mx-auto py-1 transition-all duration-500 ease-catx-ease" slideToSectionCallback={slideToSection} />
-              <TopBarItem title={"About us"} link={"about-us"} className="w-fit mx-auto py-1 transition-all duration-500 ease-catx-ease" slideToSectionCallback={slideToSection} />
+              <TopBarItem title={"Équipes"} link={"teams"} className="w-fit mx-auto py-1 transition-all duration-500 ease-catx-ease" slideToSectionCallback={slideToSection} />
+              <TopBarItem title={"Sociaux"} link={"socials"} className="w-fit mx-auto py-1 transition-all duration-500 ease-catx-ease" slideToSectionCallback={slideToSection} />
               <TopBarItem title={"Contact"} link={"contact"} className="w-fit mx-auto py-1 transition-all duration-500 ease-catx-ease" slideToSectionCallback={slideToSection} />
+              <TopBarItem title={"À propos"} link={"about-us"} className="w-fit mx-auto py-1 transition-all duration-500 ease-catx-ease" slideToSectionCallback={slideToSection} />
             </ul>
           </nav>
         </div>
@@ -87,10 +87,10 @@ const TopBar = () => {
         <Divider />
         <nav>
           <ul className="mt-5 flex justify-center font-bignoodletitling text-4xl text-catx-yellow italic">
-            <TopBarItem title={"Teams"} link={"teams"} slideToSectionCallback={slideToSection} />
-            <TopBarItem title={"Socials"} link={"socials"} slideToSectionCallback={slideToSection} />
-            <TopBarItem title={"About us"} link={"about-us"} slideToSectionCallback={slideToSection} />
+            <TopBarItem title={"Équipes"} link={"teams"} slideToSectionCallback={slideToSection} />
+            <TopBarItem title={"Sociaux"} link={"socials"} slideToSectionCallback={slideToSection} />
             <TopBarItem title={"Contact"} link={"contact"} slideToSectionCallback={slideToSection} />
+            <TopBarItem title={"À propos"} link={"about-us"} slideToSectionCallback={slideToSection} />
           </ul>
         </nav>
       </header>
