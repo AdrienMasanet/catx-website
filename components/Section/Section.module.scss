@@ -1,0 +1,21 @@
+@import "../../styles/variables.scss";
+
+.container {
+  &::before {
+    content: "";
+    display: block;
+    margin: 0 auto 0.15em 50%;
+    width: 65%;
+    height: 3px;
+    background-color: $cl-yellow;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    margin: 0.15em 50% 0 auto;
+    width: 65%;
+    height: 3px;
+    background-color: $cl-yellow;
+  }
+}
