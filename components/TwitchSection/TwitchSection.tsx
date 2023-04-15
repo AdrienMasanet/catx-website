@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from "react";
 import { TwitchEmbed } from "react-twitch-embed";
 import Section from "../Section/Section";
-import { hostname } from "os";
 
 const TwitchSection = () => {
   const [isCatxLive, setIsCatxLive] = useState<boolean>(false);
@@ -29,16 +28,17 @@ const TwitchSection = () => {
 
   useEffect(() => {
     checkIfCatxIsLive();
-    console.log("PARENT", window.location.hostname);
   }, []);
 
-  if (!isCatxLive) return null;
+  if (isCatxLive) {
+    return (
+      <Section title={"Nous sommes en live"}>
+        <TwitchEmbed width={"100%"} channel={process.env.NEXT_PUBLIC_TWITCH_CHANNELNAME} autoplay withChat darkMode={true} onVideoReady={handleReady} />
+      </Section>
+    );
+  }
 
-  return (
-    <Section title={"Nous sommes en live"}>
-      <TwitchEmbed width={"100%"} channel={process.env.NEXT_PUBLIC_TWITCH_CHANNELNAME} autoplay withChat darkMode={true} onVideoReady={handleReady} />
-    </Section>
-  );
+  return null;
 };
 
 export default TwitchSection;
