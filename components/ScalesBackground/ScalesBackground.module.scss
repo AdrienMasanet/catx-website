@@ -1,0 +1,15 @@
+@import "../../styles/variables.scss";
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 10000vh;
+  height: 10000vh;
+  translate: -50% -50%;
+  background-image: url("/images/scale_tile.png");
+  background-repeat: repeat;
+  background-size: 7em;
+  rotate: 20deg;
+  opacity: 0.025;
+}
