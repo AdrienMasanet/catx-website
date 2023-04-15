@@ -1,0 +1,31 @@
+@import "../../styles/variables.scss";
+
+.chevron {
+  .left,
+  .right {
+    transition: all 0.3s $eg-out-cubic;
+  }
+
+  &:hover {
+    .left {
+      translate: -5px;
+    }
+    .right {
+      translate: 5px;
+    }
+  }
+}
+
+.playercontainer {
+  .playername {
+    background: linear-gradient($cl-yellow 0 0) left / var(--p, 0) no-repeat;
+    transition: 0.75s $eg-out-cubic, background-position 0s;
+  }
+
+  &:hover {
+    .playername {
+      --p: 100%;
+      background-position: right;
+    }
+  }
+}
