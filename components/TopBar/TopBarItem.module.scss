@@ -1,0 +1,15 @@
+@import "../../styles/variables.scss";
+
+.container::after {
+  content: "";
+  display: block;
+  margin: auto;
+  width: 0%;
+  height: 0.1em;
+  transition: width 0.2s $eg-out-cubic;
+  background-color: $cl-yellow;
+}
+
+.container:hover::after {
+  width: 100%;
+}
