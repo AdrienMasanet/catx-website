@@ -29,7 +29,7 @@ const TopBar = () => {
 
   function slideToSection(sectionToScrollToId: string) {
     const section = document.getElementById(sectionToScrollToId);
-    const offset = window.innerWidth < 768 ? 50 : 0;
+    const offset = 50;
     if (section) {
       const sectionY = section.getBoundingClientRect().top + window.pageYOffset - offset;
       window.scrollTo({ top: sectionY, behavior: "smooth" });
@@ -51,7 +51,7 @@ const TopBar = () => {
     return (
       <header className="pb-12">
         <div className="-top-px z-30 w-full fixed">
-          <div className="px-4 py-2 flex justify-between align-middle bg-catx-black/90 border-b-catx-white/10 border-b shadow-md backdrop-blur-sm">
+          <div className="px-4 py-2 flex justify-between align-middle bg-catx-black/90 border-catx-white/10 border-b shadow-md backdrop-blur-sm">
             <Image className="select-none" src={catxLogo} alt="CATx logo" width={50} priority onClick={() => slideToSection("home")} />
             <div
               className="relative w-8 h-8 my-auto transition-all duration-300 ease-out"
@@ -80,20 +80,23 @@ const TopBar = () => {
 
   if (isSmallScreen === false) {
     return (
-      <header className="mb-20">
-        <h1 className="w-full py-5 text-catx-white text-center font-bignoodletitling">
-          <Image className="m-auto select-none" src={catxLogo} alt="CATx logo" width={150} priority />
-        </h1>
-        <Divider />
-        <nav>
-          <ul className="mt-5 flex justify-center font-bignoodletitling text-4xl text-catx-yellow italic">
-            <TopBarItem title={"Équipes"} link={"teams"} slideToSectionCallback={slideToSection} />
-            <TopBarItem title={"Sociaux"} link={"socials"} slideToSectionCallback={slideToSection} />
-            <TopBarItem title={"Contact"} link={"contact"} slideToSectionCallback={slideToSection} />
-            <TopBarItem title={"À propos"} link={"about-us"} slideToSectionCallback={slideToSection} />
-          </ul>
-        </nav>
-      </header>
+      <>
+        <header className="absolute w-full h-full top-0 z-30">
+          <h1 className="w-full py-5 text-catx-white text-center font-bignoodletitling">
+            <Image className="m-auto select-none" src={catxLogo} alt="CATx logo" width={150} priority />
+          </h1>
+          <Divider />
+          <nav className="sticky w-screen top-0 -translate-x-2/4 ml-1/2">
+            <ul className="mt-2 py-3 flex justify-center font-bignoodletitling text-4xl text-catx-yellow italic bg-catx-black/90 border-catx-white/10 border-t border-b shadow-md backdrop-blur-sm">
+              <TopBarItem title={"Équipes"} link={"teams"} slideToSectionCallback={slideToSection} />
+              <TopBarItem title={"Sociaux"} link={"socials"} slideToSectionCallback={slideToSection} />
+              <TopBarItem title={"Contact"} link={"contact"} slideToSectionCallback={slideToSection} />
+              <TopBarItem title={"À propos"} link={"about-us"} slideToSectionCallback={slideToSection} />
+            </ul>
+          </nav>
+        </header>
+        <hr className="h-80 border-none" />
+      </>
     );
   }
 

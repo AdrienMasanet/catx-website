@@ -14,7 +14,7 @@ const DynamicTwitchSection = dynamic(() => import("@/components/TwitchSection/Tw
 export default function Home() {
   return (
     <>
-      <main id="home" className="min-h-screen max-w-6xl mx-auto">
+      <main id="home" className="relative min-h-screen max-w-6xl mx-auto">
         <TopBar />
         <DynamicTwitchSection />
         <Section title={"Équipes"} id="teams">

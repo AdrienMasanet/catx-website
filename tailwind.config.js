@@ -25,6 +25,9 @@ module.exports = {
         "catx-red-hard-sm": ".1em .1em 0 #970502",
         "catx-red-hard-md": ".2em .2em 0 #970502",
       },
+      margin: {
+        "1/2": "50%",
+      },
     },
   },
   plugins: [],
