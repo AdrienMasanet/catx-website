@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" className={`${fontBigNoodleTitling.variable} ${raleway.variable}`}>
-      <body className="relative bg-catx-black">
+      <body className="relative bg-catx-black overflow-x-hidden">
         {children}
         <ScalesBackground />
       </body>
