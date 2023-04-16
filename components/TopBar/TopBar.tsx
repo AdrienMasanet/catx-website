@@ -81,12 +81,12 @@ const TopBar = () => {
   if (isSmallScreen === false) {
     return (
       <>
-        <header className="absolute w-full h-full top-0 z-30">
-          <h1 className="w-full py-5 text-catx-white text-center font-bignoodletitling">
-            <Image className="m-auto select-none" src={catxLogo} alt="CATx logo" width={150} priority />
-          </h1>
-          <Divider />
-          <nav className="sticky w-screen top-0 -translate-x-2/4 ml-1/2">
+        <h1 className="w-full py-5 text-catx-white text-center font-bignoodletitling">
+          <Image className="m-auto select-none" src={catxLogo} alt="CATx logo" width={150} priority />
+        </h1>
+        <Divider />
+        <header className="sticky z-30 w-screen top-0 -translate-x-2/4 ml-1/2">
+          <nav>
             <ul className="mt-2 py-3 flex justify-center font-bignoodletitling text-4xl text-catx-yellow italic bg-catx-black/90 border-catx-white/10 border-t border-b shadow-md backdrop-blur-sm">
               <TopBarItem title={"Équipes"} link={"teams"} slideToSectionCallback={slideToSection} />
               <TopBarItem title={"Sociaux"} link={"socials"} slideToSectionCallback={slideToSection} />
@@ -95,7 +95,6 @@ const TopBar = () => {
             </ul>
           </nav>
         </header>
-        <hr className="h-80 border-none" />
       </>
     );
   }
