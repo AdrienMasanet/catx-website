@@ -87,7 +87,7 @@ const Teams = ({ teams }: TeamsProps) => {
           </div>
         ))}
       </div>
-      <div className="flex justify-between mt-10 mx-auto px-5 py-4 bg-catx-black border border-catx-white/10 rounded-lg shadow-lg">
+      <div className="flex justify-between items-center mt-10 mx-auto px-5 py-4 bg-catx-black border border-catx-white/10 rounded-lg shadow-lg">
         <div className="font-bold">
           <p>
             Pseudo : <span className="font-thin">{memberReviewing?.pseudo}</span>
@@ -102,7 +102,7 @@ const Teams = ({ teams }: TeamsProps) => {
             Rôle : <span className="font-thin">{memberReviewing?.role}</span>
           </p>
         </div>
-        <div className="flex flex-col md:flex-row justify-center gap-5">
+        <div className="grid grid-cols-2 gap-4">
           {memberReviewing?.socials?.map((social) => (
             <SocialIcon key={social.name} social={social} scale={30} />
           ))}
