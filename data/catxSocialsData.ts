@@ -13,7 +13,7 @@ const catxSocialsData: SocialMedia[] = [
   },
   {
     name: "Youtube",
-    url: "https://www.youtube.com/@CATxTeam66",
+    url: "https://www.youtube.com/@TeamCATx",
     image: "/images/social/youtube.svg",
   },
   {

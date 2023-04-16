@@ -9,7 +9,7 @@ const teamsData: Team[] = [
         pseudo: "Beze",
         name: "Thomas L.",
         age: 21,
-        role: "Riffle",
+        role: "Rifle",
         image: "/images/teams/csgo.jpg",
         socials: [
           {
@@ -28,7 +28,7 @@ const teamsData: Team[] = [
         pseudo: "Akarno",
         name: "Sammi Z.",
         age: 20,
-        role: "Riffle",
+        role: "Rifle",
         image: "/images/teams/csgo.jpg",
         socials: [
           {
@@ -67,7 +67,7 @@ const teamsData: Team[] = [
         pseudo: "Den",
         name: "Andreas L.",
         age: 33,
-        role: "Riffle",
+        role: "Rifle",
         image: "/images/teams/csgo.jpg",
         socials: [
           {
@@ -86,7 +86,7 @@ const teamsData: Team[] = [
         pseudo: "Spiritix",
         name: "Mathis F.",
         age: 20,
-        role: "Riffle",
+        role: "Rifle",
         image: "/images/teams/csgo.jpg",
         socials: [
           {
