@@ -8,8 +8,8 @@ type SocialIconProps = {
 
 const SocialIcon = ({ social, scale = 100 }: SocialIconProps) => {
   return (
-    <a href={social.url} target="_blank" rel="noreferrer">
-      <Image className={`md:h-auto transition-scale duration-300 hover:scale-105 ease-catx-ease ${scale! < 100 ? "drop-shadow-catx-red-hard-sm" : "drop-shadow-catx-red-hard-md"}`} src={social.image} alt={`${social.name}`} width={scale} height={scale} style={{ width: scale || 100, height: "auto" }} />
+    <a className={`relative transition-scale duration-300 hover:scale-105 ease-catx-ease ${scale! < 100 ? "drop-shadow-catx-red-hard-sm" : "drop-shadow-catx-red-hard-md"}`} href={social.url} target="_blank" rel="noreferrer" style={{ width: scale || 100, height: scale || 100 }}>
+      <Image src={social.image} alt={`${social.name}`} fill />
     </a>
   );
 };
