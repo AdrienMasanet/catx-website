@@ -14,7 +14,7 @@ const Member = ({ pseudo, image, reviewing }: MemberProps) => {
         <div className="md:text-2xl border-t-2 border-catx-black mt-auto bg-catx-white">
           <p className={`${styles.playername} ${reviewing ? "!bg-catx-yellow" : ""} lg:p-2 text-center font-bignoodletitling md:text-lg lg:text-2xl text-catx-black`}>{pseudo}</p>
         </div>
-        <Image className="-z-10 object-cover md:skew-x-12 overflow-visible" src={image} alt={`${pseudo} logo`} fill sizes="100%" />
+        <Image className="-z-10 object-cover" src={image} alt={`${pseudo} logo`} fill sizes="100%" />
       </div>
     </div>
   );
