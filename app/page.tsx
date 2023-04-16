@@ -1,10 +1,13 @@
 import Section from "@/components/Section/Section";
 import Teams from "@/components/Teams/Teams";
+import staffData from "@/data/staffData";
 import teamsData from "@/data/teamsData";
+import partnersData from "@/data/partnersData";
 import catxSocialsData from "@/data/catxSocialsData";
 import SocialIcon from "@/components/SocialIcon/SocialIcon";
 import Footer from "@/components/Footer/Footer";
 import TopBar from "@/components/TopBar/TopBar";
+import Partners from "@/components/Partners/Partners";
 import dynamic from "next/dynamic";
 
 const DynamicTwitchSection = dynamic(() => import("@/components/TwitchSection/TwitchSection"), {
@@ -16,10 +19,13 @@ export default function Home() {
     <>
       <main id="home" className="relative min-h-screen max-w-6xl mx-auto">
         <TopBar />
+
         <DynamicTwitchSection />
+
         <Section title={"Équipes"} id="teams">
           <Teams teams={teamsData} />
         </Section>
+
         <Section title={"Sociaux"} id={"socials"}>
           <div className="md:w-5/6 mx-auto flex items-center justify-center gap-7 md:gap-20">
             {catxSocialsData.map((social) => (
@@ -27,18 +33,32 @@ export default function Home() {
             ))}
           </div>
         </Section>
+
         <Section title={"Contact"} id={"contact"}>
-          <p>Non id ea dolor officia dolore aliquip id reprehenderit incididunt nostrud laborum ex. In reprehenderit anim consectetur mollit velit cillum ullamco eu id adipisicing laborum ad deserunt. Nulla ex nulla ullamco labore cillum. Incididunt nulla Lorem laborum labore labore do eiusmod dolor dolor consequat duis. Labore reprehenderit elit quis deserunt enim minim aliqua. Exercitation veniam ullamco commodo incididunt nulla dolor elit tempor veniam aliquip. Cupidatat aliquip ad officia adipisicing ea voluptate amet incididunt et est nostrud culpa sunt. Sint do laboris qui aliqua pariatur sit do ex. Cillum dolore voluptate mollit aliqua quis mollit.</p>
+          <p className="mb-7">Vous souhaitez nous contacter, vous avez une question ou bien encore vous souhaitez rejoindre l&apos;association ? N&apos;hésitez pas à nous envoyer un mail à l&apos;adresse suivante et nous vous répondrons dans les plus brefs délais :</p>
+
+          <h3 className="w-fit mx-auto my-16 text-center font-bignoodletitling text-4xl text-catx-yellow select-none underline hover:drop-shadow-catx-red-hard-sm">
+            <a href="mailto:contact@teamcatx.fr" target="_blank" rel="noreferrer">
+              contact@teamcatx.fr
+            </a>
+          </h3>
+
+          <Teams teams={staffData} />
+
+          <h3 className="w-fit mx-auto my-16 text-center font-bignoodletitling text-4xl text-catx-yellow select-none">Partenaires</h3>
+
+          <Partners partners={partnersData} />
         </Section>
+
         <Section title={"À propos"} id={"about-us"}>
           <p className="mb-7">
             <span className="font-bold">Team CATx</span> est une association eSport sous loi 1901, crée en 2023 par <span className="font-bold">Own3D</span> et <span className="font-bold">SunRayzer</span>. Elle évolue sur CS:GO en ESEA OPEN Season 45, représentée par <span className="font-bold">Akarno</span>, <span className="font-bold">Beze</span>, <span className="font-bold">deN</span>, <span className="font-bold">Magz</span> et <span className="font-bold">Spiritix</span>. <br />
             Nous avons pour objectif de rassembler des passionnés de jeux vidéos et plus particulièrement de sport électronique, de participer à des compétitions en ligne ou en LAN et de promouvoir l&apos;eSport. <span className="font-bold text-catx-yellow italic">Som i serem.</span>
           </p>
 
-          <h3 className="w-fit mx-auto my-16 pr-2 text-center font-bignoodletitling text-4xl text-catx-yellow select-none">Notre Histoire</h3>
+          <h3 className="w-fit mx-auto my-16 text-center font-bignoodletitling text-4xl text-catx-yellow select-none">Notre Histoire</h3>
 
-          <h4 className="w-fit mx-auto mt-16 mb-7 pr-2 text-center font-bignoodletitling text-2xl text-catx-yellow select-none">CATx Team | 2009 - 2011</h4>
+          <h4 className="w-fit mx-auto mt-16 mb-7 text-center font-bignoodletitling text-2xl text-catx-yellow select-none">CATx Team | 2009 - 2011</h4>
           <p className="mb-7 md:mb-10">
             Notre histoire commence aux alentours de 2006-2007 lorsque <span className="font-bold">Own3D</span>, joueur casual de CS1,6 et CSS, se balade sur differents serveurs remplis de clans. Ayant découvert le jeu grâce à l&apos;emission &quot;Arena Online&quot; et fasciné par la compétition notamment grâce aux equipes telles que <span className="font-bold">*aAa*</span> et <span className="font-bold">D4</span>, il décide de donner un no à son duo de l&apos;époque : <span className="font-bold">WTFT</span>.{" "}
           </p>
@@ -58,7 +78,7 @@ export default function Home() {
             Entre discours et promesses non tenues, <span className="font-bold">CATx</span> mettra fin à son partenariat avec DsM en 2013 et décide de faire cavalier seul, c&apos;est alors que <span className="font-bold">CATx</span> deviendra pour la première fois une structure multigaming à part entiere : c&apos;est la naissance de <span className="font-bold">CATx eSport</span>.
           </p>
 
-          <h4 className="w-fit mx-auto mt-16 mb-7 pr-2 text-center font-bignoodletitling text-2xl text-catx-yellow select-none">CATx eSport | 2011 - 2017</h4>
+          <h4 className="w-fit mx-auto mt-16 mb-7 text-center font-bignoodletitling text-2xl text-catx-yellow select-none">CATx eSport | 2011 - 2017</h4>
           <p className="mb-7 md:mb-10">
             Les catalans évoluent désormais sur BO2, de nombreux joueurs arrêtent la compétition, <span className="font-bold">Own3D</span> se place en retrait et travaille dans l&apos;ombre pour faire évoluer la structure. CATx eSport recrute de nombreux rosters BO2, <span className="font-bold">CATx.DarKrystal</span> évoluant en Decerto, <span className="font-bold">CATx.LoL</span>, <span className="font-bold">CATx.EPIC</span> évoluant en eSniping, et d&apos;autres en tout genre. Le but initial était de devenir une communauté forte et reconnue.{" "}
           </p>
@@ -69,12 +89,13 @@ export default function Home() {
             Own3D retourne à son premier amour aux alentours de 2014 sur CS:GO, toujours accompagné de <span className="font-bold">SunRayzer</span> et <span className="font-bold">Anagane</span>, ils seront rejoint par <span className="font-bold">Maza</span>, (qui a toujours gravité autour de CATx), ainsi que <span className="font-bold">Bulbiere</span>. Toujours passionnés par CS, <span className="font-bold">Own3D</span> et <span className="font-bold">SunRayzer</span> rêvent encore d&apos;hisser CATx au rang d&apos;association eSport officielle. C&apos;est en 2017 que l&apos;idée ressurgit, première assemblée générale, premières discussions, intégration d&apos;un staff... Mais aucun accord n&apos;est trouvé. L&apos;équipe se contente de jouer et passer du bon temps, comme à son habitude.
           </p>
 
-          <h4 className="w-fit mx-auto mt-16 mb-7 pr-2 text-center font-bignoodletitling text-2xl text-catx-yellow select-none">Team CATx | 2023</h4>
+          <h4 className="w-fit mx-auto mt-16 mb-7 text-center font-bignoodletitling text-2xl text-catx-yellow select-none">Team CATx | 2023</h4>
           <p>
             <span className="font-bold">SunRayzer</span> et <span className="font-bold">Own3D</span> décident alors en 2023 de se lancer à deux dans l&apos;aventure, et construisent alors un réel projet : celui de lancer leur équipe CS:GO en apportant tout le soutien nécéssaire, toute leur passion. <span className="font-bold">Team CATx</span> devient alors officiellement une association sous loi 1901 le 24 Janvier 2023. Le projet est simple : lancer une équipe CS:GO, donner les clés à de jeunes talents en leur ouvrant la voie et en leur permettant de faire briller leur potentiel dans le milieu de l&apos;eSport.
           </p>
         </Section>
       </main>
+
       <Footer />
     </>
   );
