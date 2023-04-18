@@ -4,6 +4,7 @@ import staffData from "@/data/staffData";
 import teamsData from "@/data/teamsData";
 import partnersData from "@/data/partnersData";
 import catxSocialsData from "@/data/catxSocialsData";
+import tributedMembers from "@/data/tributedMembers";
 import SocialIcon from "@/components/SocialIcon/SocialIcon";
 import Footer from "@/components/Footer/Footer";
 import TopBar from "@/components/TopBar/TopBar";
@@ -94,6 +95,18 @@ export default function Home() {
           <p>
             <span className="font-bold">SunRayzer</span> et <span className="font-bold">Own3D</span> décident alors en 2023 de se lancer à deux dans l&apos;aventure, et construisent alors un réel projet : celui de lancer leur équipe CS:GO en apportant tout le soutien nécéssaire, toute leur passion. <span className="font-bold">Team CATx</span> devient alors officiellement une association sous loi 1901 le 24 Janvier 2023. Le projet est simple : lancer une équipe CS:GO, donner les clés à de jeunes talents en leur ouvrant la voie et en leur permettant de faire briller leur potentiel dans le milieu de l&apos;eSport.
           </p>
+
+          <h3 className="w-fit mx-auto my-16 text-center font-bignoodletitling text-4xl text-catx-yellow select-none">Hommages</h3>
+
+          <div className="md:w-4/6 mx-auto flex flex-wrap justify-center text-lg font-thin whitespace-nowrap">
+            {tributedMembers.map((member, index) => (
+              <>
+                <span key={member.name} className={`${index !== tributedMembers.length - 1 ? "after:content-['•'] after:mx-2" : ""}`}>
+                  {member.name}
+                </span>
+              </>
+            ))}
+          </div>
         </Section>
       </main>
 
