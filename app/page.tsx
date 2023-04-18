@@ -35,13 +35,14 @@ export default function Home() {
         </Section>
 
         <Section title={"Contact"} id={"contact"}>
-          <p className="mb-7">Vous souhaitez nous contacter, vous avez une question ou bien encore vous souhaitez rejoindre l&apos;association ? N&apos;hésitez pas à nous envoyer un mail à l&apos;adresse suivante et nous vous répondrons dans les plus brefs délais :</p>
-
-          <h3 className="w-fit mx-auto my-16 text-center font-bignoodletitling text-4xl text-catx-yellow select-none underline hover:drop-shadow-catx-red-hard-sm">
-            <a href="mailto:contact@teamcatx.fr" target="_blank" rel="noreferrer">
+          <p className="mb-7 text-center">
+            Vous souhaitez nous contacter, vous avez une question ou bien encore vous souhaitez rejoindre l&apos;association ?
+            <br />
+            N&apos;hésitez pas à nous envoyer un mail à l&apos;adresse suivante et nous vous répondrons dans les plus brefs délais :&nbsp;
+            <a className="w-fit mx-auto my-16 text-center font-bignoodletitling text-xl text-catx-yellow hover:drop-shadow-catx-red-hard-sm" href="mailto:contact@teamcatx.fr" target="_blank" rel="noreferrer">
               contact@teamcatx.fr
             </a>
-          </h3>
+          </p>
 
           <Teams teams={staffData} />
 
