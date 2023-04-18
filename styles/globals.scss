@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import "./variables.scss";
+
+::selection {
+  background-color: $cl-red;
+  color: $cl-white;
+}
