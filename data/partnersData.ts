@@ -31,6 +31,7 @@ const partnersData: Partner[] = [
         image: "/images/social/tiktok.svg",
       },
     ],
+    defaultUrl: "https://www.twitch.tv/bulbiere",
   },
 ];
 
