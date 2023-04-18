@@ -14,12 +14,13 @@ const staffData: Team[] = [
         socials: [
           {
             name: "Discord",
-            url: "https://steamcommunity.com/id/bezeeeee/",
+            textToCopyIntoClipboard: "Own3D#4449",
             image: "/images/social/discord.svg",
+            tooltip: "Cliquez ici pour copier l'identifiant Discord de Own3D dans votre presse-papier",
           },
           {
             name: "Twitter",
-            url: "https://www.faceit.com/fr/players/beze_",
+            url: "https://twitter.com/Own3DGuy",
             image: "/images/social/twitter.svg",
           },
         ],
@@ -33,13 +34,9 @@ const staffData: Team[] = [
         socials: [
           {
             name: "Discord",
-            url: "https://steamcommunity.com/id/AkarnoO",
+            textToCopyIntoClipboard: "SunRayzer#9975",
             image: "/images/social/discord.svg",
-          },
-          {
-            name: "Twitter",
-            url: "https://www.faceit.com/fr/players/AkarnOob",
-            image: "/images/social/twitter.svg",
+            tooltip: "Cliquez ici pour copier l'identifiant Discord de SunRayzer dans votre presse-papier",
           },
         ],
       },
