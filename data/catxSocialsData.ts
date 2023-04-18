@@ -7,9 +7,9 @@ const catxSocialsData: SocialMedia[] = [
     image: "/images/social/twitter.svg",
   },
   {
-    name: "Facebook",
-    url: "https://www.facebook.com/TeamCATx",
-    image: "/images/social/facebook.svg",
+    name: "Instagram",
+    url: "https://www.instagram.com/teamcatx_official",
+    image: "/images/social/instagram.svg",
   },
   {
     name: "Youtube",

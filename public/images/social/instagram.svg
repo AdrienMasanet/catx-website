@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Calque_1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+  <style type="text/css">
+	.st0{fill:#FEE300;}
+  </style>
+  <path class="st0" d="M15,0.6C7.1,0.6,0.6,7.1,0.6,15v20c0,8,6.5,14.4,14.4,14.4h20c8,0,14.4-6.5,14.4-14.4V15
+	c0-8-6.5-14.4-14.4-14.4H15z M38.3,9.5c1.2,0,2.2,1,2.2,2.2s-1,2.2-2.2,2.2c-1.2,0-2.2-1-2.2-2.2S37.1,9.5,38.3,9.5z M25,12.8
+	c6.7,0,12.2,5.5,12.2,12.2S31.7,37.2,25,37.2S12.8,31.7,12.8,25S18.3,12.8,25,12.8z M25,15c-5.5,0-10,4.5-10,10s4.5,10,10,10
+	s10-4.5,10-10S30.5,15,25,15z"/>
+</svg>
