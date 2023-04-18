@@ -1,6 +1,7 @@
 import "@/styles/globals.scss";
 import localFont from "@next/font/local";
 import ScalesBackground from "@/components/ScalesBackground/ScalesBackground";
+import { Analytics } from "@vercel/analytics/react";
 
 const fontBigNoodleTitling = localFont({ src: "../public/fonts/big_noodle_titling.ttf", variable: "--font-bignoodletitling" });
 const raleway = localFont({ src: "../public/fonts/raleway.ttf", variable: "--font-raleway" });
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="relative bg-catx-black overflow-x-hidden">
         {children}
         <ScalesBackground />
+        <Analytics />
       </body>
     </html>
   );
