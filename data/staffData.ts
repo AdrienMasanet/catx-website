@@ -26,7 +26,7 @@ const staffData: Team[] = [
         ],
       },
       {
-        pseudo: "Sunrayzer",
+        pseudo: "SunRayzer",
         name: "William T.",
         age: 26,
         role: "Co-président",
