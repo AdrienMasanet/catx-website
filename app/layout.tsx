@@ -1,5 +1,5 @@
 import "@/styles/globals.scss";
-import localFont from "@next/font/local";
+import localFont from "next/font/local";
 import ScalesBackground from "@/components/ScalesBackground/ScalesBackground";
 import { Analytics } from "@vercel/analytics/react";
 
