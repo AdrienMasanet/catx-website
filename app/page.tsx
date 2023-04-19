@@ -100,11 +100,9 @@ export default function Home() {
 
           <div className="md:w-4/6 mx-auto flex flex-wrap justify-center text-lg font-thin whitespace-nowrap">
             {tributedMembers.map((member, index) => (
-              <>
-                <span key={member.name} className={`${index !== tributedMembers.length - 1 ? "after:content-['•'] after:mx-2" : ""}`}>
-                  {member.name}
-                </span>
-              </>
+              <span key={member.name} className={`${index !== tributedMembers.length - 1 ? "after:content-['•'] after:mx-2" : ""}`}>
+                {member.name}
+              </span>
             ))}
           </div>
         </Section>
