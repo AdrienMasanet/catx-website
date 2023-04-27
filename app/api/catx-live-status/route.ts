@@ -15,10 +15,10 @@ export async function GET(): Promise<NextResponse> {
 
     twitchApiToken = twitchApiTokenData.access_token;
 
-    // Then get the stream status of the channel that is defined in the env variables to be the one hosting CATx streams on Twitch
+    // Then get the stream status of the catx channel and the channel that is defined in the env variables to be the fallback one hosting CATx streams on Twitch
     let isCatxLive: boolean = false;
 
-    const twitchApiBulbiereStreamResponse = await fetch(`https://api.twitch.tv/helix/streams?user_login=${process.env.NEXT_PUBLIC_TWITCH_CHANNELNAME}`, {
+    const twitchApiStreamResponse = await fetch(`https://api.twitch.tv/helix/streams?user_login=${process.env.NEXT_PUBLIC_TWITCH_CHANNELNAME}&user_login=teamcatx`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${twitchApiToken}`,
@@ -26,13 +26,22 @@ export async function GET(): Promise<NextResponse> {
       },
     });
 
-    if (!twitchApiBulbiereStreamResponse.ok) throw { status: twitchApiBulbiereStreamResponse.status, statusText: twitchApiBulbiereStreamResponse.statusText };
-    const twitchApiBulbiereStreamData: any = await twitchApiBulbiereStreamResponse.json();
-    if (process.env.NODE_ENV === "development") console.log(`Twitch API stream response for channel ${process.env.NEXT_PUBLIC_TWITCH_CHANNELNAME} :\n`, twitchApiBulbiereStreamData);
+    if (!twitchApiStreamResponse.ok) throw { status: twitchApiStreamResponse.status, statusText: twitchApiStreamResponse.statusText };
+    const twitchApiStreamData: any = await twitchApiStreamResponse.json();
+    if (process.env.NODE_ENV === "development") console.log(`Twitch API stream response :\n`, twitchApiStreamData);
 
-    if (twitchApiBulbiereStreamData.data && twitchApiBulbiereStreamData.data.length > 0 && twitchApiBulbiereStreamData.data[0].title && twitchApiBulbiereStreamData.data[0].title.toLowerCase().includes(process.env.CATX_TRIGGERWORD!.toLowerCase())) isCatxLive = true;
+    let streamingChannel: string = "";
 
-    return NextResponse.json({ isCatxLive });
+    if (twitchApiStreamData.data && twitchApiStreamData.data.length > 0) {
+      twitchApiStreamData.data.forEach((streamData: any) => {
+        if (streamData.title && streamData.title.toLowerCase().includes(process.env.CATX_TRIGGERWORD!.toLowerCase())) {
+          isCatxLive = true;
+          streamingChannel = streamData.user_login;
+        }
+      });
+    }
+
+    return NextResponse.json({ isCatxLive, streamingChannel });
   } catch (error: any) {
     console.error("A", error);
     if (process.env.NODE_ENV === "development") return NextResponse.json(null, { status: error.status, statusText: error.statusText });

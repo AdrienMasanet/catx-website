@@ -6,6 +6,7 @@ import Section from "../Section/Section";
 
 const TwitchSection = () => {
   const [isCatxLive, setIsCatxLive] = useState<boolean>(false);
+  const [streamingChannel, setStreamingChannel] = useState<string>("");
   const embed = useRef(); // Use a ref instead of state to avoid rerenders
 
   const handleReady = (event: any) => {
@@ -22,6 +23,7 @@ const TwitchSection = () => {
       .then((data) => {
         if (process.env.NODE_ENV === "development") console.log(data);
         setIsCatxLive(data.isCatxLive);
+        setStreamingChannel(data.streamingChannel);
       })
       .catch((error) => console.log(error));
   };
@@ -33,7 +35,7 @@ const TwitchSection = () => {
   if (isCatxLive) {
     return (
       <Section title={"Nous sommes en live"}>
-        <TwitchEmbed width={"100%"} channel={process.env.NEXT_PUBLIC_TWITCH_CHANNELNAME} autoplay withChat darkMode={true} onVideoReady={handleReady} />
+        <TwitchEmbed width={"100%"} channel={streamingChannel} autoplay withChat darkMode={true} onVideoReady={handleReady} />
       </Section>
     );
   }
