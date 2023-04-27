@@ -32,7 +32,7 @@ const TwitchSection = () => {
     checkIfCatxIsLive();
   }, []);
 
-  if (isCatxLive) {
+  if (isCatxLive && streamingChannel) {
     return (
       <Section title={"Nous sommes en live"}>
         <TwitchEmbed width={"100%"} channel={streamingChannel} autoplay withChat darkMode={true} onVideoReady={handleReady} />
