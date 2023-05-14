@@ -17,9 +17,6 @@ const tributedMembers: TributedMember[] = [
     name: "Raie\u2011my",
   },
   {
-    name: "Anagane",
-  },
-  {
     name: "ByYodjii",
   },
   {

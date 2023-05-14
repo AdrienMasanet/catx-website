@@ -3,7 +3,8 @@ import Team from "@/interfaces/Team";
 const staffData: Team[] = [
   {
     name: "Staff",
-    description: "Counter-Strike: Global Offensive is a first-person shooter video game developed by Hidden Path Entertainment and Valve Corporation. It is the fourth game in the Counter-Strike series and was released for Windows, OS X, Xbox 360, and PlayStation 3 in August 2012, while the Linux version was released in 2014.",
+    description:
+      "Counter-Strike: Global Offensive is a first-person shooter video game developed by Hidden Path Entertainment and Valve Corporation. It is the fourth game in the Counter-Strike series and was released for Windows, OS X, Xbox 360, and PlayStation 3 in August 2012, while the Linux version was released in 2014.",
     members: [
       {
         pseudo: "Own3D",
@@ -56,6 +57,21 @@ const staffData: Team[] = [
             name: "LinkedIn",
             url: "https://www.linkedin.com/in/adrienmasanet/",
             image: "/images/social/linkedin.svg",
+          },
+        ],
+      },
+      {
+        pseudo: "Anagane",
+        name: "Geoffrey C.",
+        age: 26,
+        role: "Modérateur",
+        image: "/images/teams/csgo.jpg",
+        socials: [
+          {
+            name: "Discord",
+            textToCopyIntoClipboard: "CATx_Stratege#6457",
+            image: "/images/social/discord.svg",
+            tooltip: "Cliquez ici pour copier l'identifiant Discord de Anagane dans votre presse-papier",
           },
         ],
       },
