@@ -15,7 +15,10 @@ const TwitchSection = () => {
   };
 
   const checkIfCatxIsLive = async () => {
-    fetch("/api/catx-live-status", { method: "GET" })
+    fetch("/api/catx-live-status", {
+      method: "GET",
+      cache: "no-store",
+    })
       .then((response) => {
         if (!response.ok) throw new Error();
         return response.json();

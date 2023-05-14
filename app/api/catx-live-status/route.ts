@@ -7,6 +7,7 @@ export async function GET(): Promise<NextResponse> {
 
     const twitchApiTokenResponse = await fetch(`https://id.twitch.tv/oauth2/token?client_id=${process.env.TWITCH_CLIENTID}&client_secret=${process.env.TWITCH_SECRET}&grant_type=client_credentials`, {
       method: "POST",
+      cache: "no-store",
     });
 
     if (!twitchApiTokenResponse.ok) throw { status: twitchApiTokenResponse.status, statusText: twitchApiTokenResponse.statusText };
@@ -20,6 +21,7 @@ export async function GET(): Promise<NextResponse> {
 
     const twitchApiStreamResponse = await fetch(`https://api.twitch.tv/helix/streams?user_login=${process.env.NEXT_PUBLIC_TWITCH_CHANNELNAME}&user_login=teamcatx`, {
       method: "GET",
+      cache: "no-store",
       headers: {
         Authorization: `Bearer ${twitchApiToken}`,
         "Client-Id": process.env.TWITCH_CLIENTID || "",
@@ -41,10 +43,13 @@ export async function GET(): Promise<NextResponse> {
       });
     }
 
-    return NextResponse.json({ isCatxLive, streamingChannel });
+    return NextResponse.json({ isCatxLive, streamingChannel }, { headers: { "Cache-Control": "no-store" } });
   } catch (error: any) {
-    console.error("A", error);
-    if (process.env.NODE_ENV === "development") return NextResponse.json(null, { status: error.status, statusText: error.statusText });
-    return NextResponse.json(null, { status: 500, statusText: "Une erreur est survenue lors de la vérification de flux Twitch actif concernant la CATx" });
+    if (process.env.NODE_ENV === "development") {
+      console.log(`Error :\n`, error);
+      return NextResponse.json(null, { status: error.status, statusText: error.statusText, headers: { "Cache-Control": "no-store" } });
+    } else {
+      return NextResponse.json(null, { status: 500, statusText: "Une erreur est survenue lors de la vérification de flux Twitch actif concernant la CATx", headers: { "Cache-Control": "no-store" } });
+    }
   }
 }
