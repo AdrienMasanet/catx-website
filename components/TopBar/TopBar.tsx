@@ -51,7 +51,7 @@ const TopBar = () => {
     return (
       <header className="pb-12">
         <div className="-top-px z-30 w-full fixed">
-          <div className="px-4 py-2 flex justify-between align-middle bg-catx-black/90 border-catx-white/10 border-b shadow-md backdrop-blur-sm">
+          <div className="px-4 py-2 flex justify-between align-middle bg-catx-black/90 border-catx-white/10 border-b shadow-md backdrop-blur-xs">
             <Image className="select-none" src={catxLogo} alt="CATx logo" width={50} priority onClick={() => slideToSection("home")} />
             <div
               className="relative w-8 h-8 my-auto transition-all duration-300 ease-out"
@@ -66,7 +66,7 @@ const TopBar = () => {
             </div>
           </div>
           <nav ref={mobileMenuRef} className={`${isMobileMenuOpen ? "" : "py-0 shadow-none"} transition-all duration-700 ease-catx-ease overflow-hidden`} style={{ maxHeight: isMobileMenuOpen ? mobileMenuRef.current?.scrollHeight + "px" : "0px" }}>
-            <ul className="py-2 text-center font-bignoodletitling text-2xl text-catx-white bg-catx-black/90 shadow-md backdrop-blur-sm">
+            <ul className="py-2 text-center font-bignoodletitling text-2xl text-catx-white bg-catx-black/90 shadow-md backdrop-blur-xs">
               <TopBarItem title={"Équipes"} link={"teams"} className="w-fit mx-auto py-1 transition-all duration-500 ease-catx-ease" slideToSectionCallback={slideToSection} />
               <TopBarItem title={"Sociaux"} link={"socials"} className="w-fit mx-auto py-1 transition-all duration-500 ease-catx-ease" slideToSectionCallback={slideToSection} />
               <TopBarItem title={"Contact"} link={"contact"} className="w-fit mx-auto py-1 transition-all duration-500 ease-catx-ease" slideToSectionCallback={slideToSection} />
@@ -85,9 +85,9 @@ const TopBar = () => {
           <Image className="m-auto select-none" src={catxLogo} alt="CATx logo" width={150} priority />
         </h1>
         <Divider />
-        <header className="sticky z-30 w-screen top-0 -translate-x-2/4 ml-1/2">
+        <header className="sticky z-30 w-screen top-0 -translate-x-2/4 ml-[50%]">
           <nav>
-            <ul className="mt-2 py-3 flex justify-center font-bignoodletitling text-4xl text-catx-yellow italic bg-catx-black/90 border-catx-white/10 border-t border-b shadow-md backdrop-blur-sm">
+            <ul className="mt-2 py-3 flex justify-center font-bignoodletitling text-4xl text-catx-yellow italic bg-catx-black/90 border-catx-white/10 border-t border-b shadow-md backdrop-blur-xs">
               <TopBarItem title={"Équipes"} link={"teams"} slideToSectionCallback={slideToSection} />
               <TopBarItem title={"Sociaux"} link={"socials"} slideToSectionCallback={slideToSection} />
               <TopBarItem title={"Contact"} link={"contact"} slideToSectionCallback={slideToSection} />
