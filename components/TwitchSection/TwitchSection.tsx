@@ -1,18 +1,12 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { TwitchEmbed } from "react-twitch-embed";
+import { useState, useEffect } from "react";
 import Section from "../Section/Section";
+import TwitchEmbed from "./TwitchEmbed";
 
 const TwitchSection = () => {
   const [isCatxLive, setIsCatxLive] = useState<boolean>(false);
   const [streamingChannel, setStreamingChannel] = useState<string>("");
-  const embed = useRef(); // Use a ref instead of state to avoid rerenders
-
-  const handleReady = (event: any) => {
-    embed.current = event;
-    console.log(event);
-  };
 
   const checkIfCatxIsLive = async () => {
     fetch("/api/catx-live-status", {
@@ -38,7 +32,7 @@ const TwitchSection = () => {
   if (isCatxLive && streamingChannel) {
     return (
       <Section title={"Nous sommes en live"}>
-        <TwitchEmbed width={"100%"} channel={streamingChannel} autoplay withChat darkMode={true} onVideoReady={handleReady} />
+        <TwitchEmbed channel={streamingChannel} />
       </Section>
     );
   }

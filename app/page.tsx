@@ -9,11 +9,7 @@ import SocialIcon from "@/components/SocialIcon/SocialIcon";
 import Footer from "@/components/Footer/Footer";
 import TopBar from "@/components/TopBar/TopBar";
 import Partners from "@/components/Partners/Partners";
-import dynamic from "next/dynamic";
-
-const DynamicTwitchSection = dynamic(() => import("@/components/TwitchSection/TwitchSection"), {
-  ssr: false,
-});
+import TwitchSection from "@/components/TwitchSection/TwitchSection";
 
 export default function Home() {
   return (
@@ -21,7 +17,7 @@ export default function Home() {
       <main id="home" className="relative min-h-screen max-w-6xl mx-auto">
         <TopBar />
 
-        <DynamicTwitchSection />
+        <TwitchSection />
 
         <Section title={"Équipes"} id="teams">
           <Teams teams={teamsData} />

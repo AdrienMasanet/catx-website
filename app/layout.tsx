@@ -1,12 +1,14 @@
 import "@/styles/globals.scss";
 import localFont from "next/font/local";
 import ScalesBackground from "@/components/ScalesBackground/ScalesBackground";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
+import type { Metadata, Viewport } from "next";
 
 const fontBigNoodleTitling = localFont({ src: "../public/fonts/big_noodle_titling.ttf", variable: "--font-bignoodletitling" });
 const raleway = localFont({ src: "../public/fonts/raleway.ttf", variable: "--font-raleway" });
 
-export const metadata = {
+export const metadata: Metadata = {
+  metadataBase: process.env.NEXT_PUBLIC_CANONICAL_URL ? new URL(process.env.NEXT_PUBLIC_CANONICAL_URL) : undefined,
   title: {
     template: "Team CATx | %s",
     default: "Team CATx | Équipe e-sport française",
@@ -15,7 +17,6 @@ export const metadata = {
   authors: [{ name: "Adrien Masanet", url: "https://adrienmasa.net" }],
   creator: "Adrien Masanet",
   publisher: "Team CATx",
-  colorScheme: "dark",
   alternates: {
     canonical: process.env.NEXT_PUBLIC_CANONICAL_URL,
   },
@@ -34,6 +35,10 @@ export const metadata = {
     locale: "fr_FR",
     type: "website",
   },
+};
+
+export const viewport: Viewport = {
+  colorScheme: "dark",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

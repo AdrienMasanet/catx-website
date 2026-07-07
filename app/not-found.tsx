@@ -12,9 +12,9 @@ export default function NotFound() {
           <h2 className="text-3xl">Page non trouvée</h2>
         </div>
       </div>
-      <a className="text-catx-white text-3xl underline hover:text-catx-yellow" href="/">
+      <Link className="text-catx-white text-3xl underline hover:text-catx-yellow" href="/">
         Retour à la page d&apos;accueil
-      </a>
+      </Link>
     </div>
   );
 }
