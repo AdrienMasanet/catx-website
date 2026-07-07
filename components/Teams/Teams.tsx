@@ -1,6 +1,5 @@
 "use client";
 
-import styles from "./Teams.module.scss";
 import Team from "@/interfaces/Team";
 import TeamMember from "@/interfaces/TeamMember";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
@@ -59,8 +58,8 @@ const Teams = ({ teams }: TeamsProps) => {
     <div>
       <div className="w-fit mx-auto flex items-center gap-5 transition-all">
         {teams.length > 1 && (
-          <div className={`z-20 ${styles.chevron} transition-all`} onClick={() => changeReviewingTeam("left")}>
-            <ChevronLeftIcon className={`${styles.left} h-10 text-catx-white cursor-pointer`} />
+          <div className={"group/chevron z-20 transition-all"} onClick={() => changeReviewingTeam("left")}>
+            <ChevronLeftIcon className={"h-10 text-catx-white cursor-pointer transition-all duration-300 ease-catx-ease group-hover/chevron:[translate:-5px]"} />
           </div>
         )}
 
@@ -74,8 +73,8 @@ const Teams = ({ teams }: TeamsProps) => {
         </div>
 
         {teams.length > 1 && (
-          <div className={`z-20 ${styles.chevron} transition-all`} onClick={() => changeReviewingTeam("right")}>
-            <ChevronRightIcon className={`${styles.right} h-10 text-catx-white cursor-pointer`} />
+          <div className={"group/chevron z-20 transition-all"} onClick={() => changeReviewingTeam("right")}>
+            <ChevronRightIcon className={"h-10 text-catx-white cursor-pointer transition-all duration-300 ease-catx-ease group-hover/chevron:[translate:5px]"} />
           </div>
         )}
       </div>

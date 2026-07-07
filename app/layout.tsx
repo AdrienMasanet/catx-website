@@ -1,4 +1,4 @@
-import "@/styles/globals.scss";
+import "@/styles/globals.css";
 import localFont from "next/font/local";
 import ScalesBackground from "@/components/ScalesBackground/ScalesBackground";
 import { Analytics } from "@vercel/analytics/next";

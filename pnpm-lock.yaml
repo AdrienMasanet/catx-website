@@ -23,9 +23,6 @@ importers:
       react-dom:
         specifier: ^19.2.7
         version: 19.2.7(react@19.2.7)
-      sass:
-        specifier: ^1.101.0
-        version: 1.101.0
     devDependencies:
       '@eslint/js':
         specifier: ^9.39.4
@@ -2891,6 +2888,7 @@ snapshots:
   chokidar@5.0.0:
     dependencies:
       readdirp: 5.0.0
+    optional: true
 
   client-only@0.0.1: {}
 
@@ -3457,7 +3455,8 @@ snapshots:
 
   ignore@7.0.5: {}
 
-  immutable@5.1.9: {}
+  immutable@5.1.9:
+    optional: true
 
   import-fresh@3.3.1:
     dependencies:
@@ -3900,7 +3899,8 @@ snapshots:
     dependencies:
       picomatch: 2.3.2
 
-  readdirp@5.0.0: {}
+  readdirp@5.0.0:
+    optional: true
 
   reflect.getprototypeof@1.0.10:
     dependencies:
@@ -3974,6 +3974,7 @@ snapshots:
       source-map-js: 1.2.1
     optionalDependencies:
       '@parcel/watcher': 2.5.6
+    optional: true
 
   scheduler@0.27.0: {}
 
